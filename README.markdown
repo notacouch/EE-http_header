@@ -16,20 +16,20 @@ Set the HTTP Headers for your template.
 
 Do a 301 redirect
 
-	{exp:http_header status="301" location="{path=site/something}" terminate="yes"}
+    {exp:http_header status="301" location="{path=site/something}" terminate="yes"}
 
 Set a 404 Status header
 
-	{exp:http_header status="404"}
+    {exp:http_header status="404"}
 
 Set the Content-Type header to application/json
 
-	{exp:http_header content_type="application/json"}
+    {exp:http_header content_type="application/json"}
 
 Set Content-Disposition to force the download
 
-	{exp:http_header content_disposition="attachment" filename="myfile.xml"}
+    {exp:http_header content_disposition="attachment" filename="myfile.xml"}
 
 Set any Header, e.g. XRDS discovery for OpenID
 
-  {exp:http_header header="X-XRDS-Location: https://domain/path/to/xrds"}
+    {exp:http_header header="X-XRDS-Location: https://domain/path/to/xrds"}
