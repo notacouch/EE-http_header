@@ -9,6 +9,7 @@ Set the HTTP Headers for your template.
 * content_type - set a Content-Type header
 * charset - set a charset in the Content-Type header
 * content_disposition - set a Content-Disposition (ex: attachment) with a filename
+* header - for special use cases set any complete header
 * terminate - set to "yes" to prevent any other output from the template
 
 ## Examples
@@ -28,3 +29,7 @@ Set the Content-Type header to application/json
 Set Content-Disposition to force the download
 
 	{exp:http_header content_disposition="attachment" filename="myfile.xml"}
+
+Set any Header, e.g. XRDS discovery for OpenID
+
+  {exp:http_header header="X-XRDS-Location: https://domain/path/to/xrds"}

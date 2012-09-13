@@ -106,6 +106,11 @@ class Http_header
 			}
 		}
 
+    if ($this->EE->TMPL->fetch_param('header') !== FALSE)
+    {
+      $this->set_header($this->EE->TMPL->fetch_param('header'));
+    }
+
 		if ($this->EE->TMPL->fetch_param('terminate') === 'yes')
 		{
 			foreach ($this->EE->output->headers as $header)
@@ -200,6 +205,19 @@ class Http_header
 
 		$this->EE->output->set_header('Content-Disposition: '.$content_disposition);
 	}
+  
+  /**
+   *  set a HTTP response header
+   * 
+   * @author Abed Islam (@notacouch)
+   * @param string $header e.g. 'X-XRDS-Location: http://yourdomain.com/hybridauth_path/or_somthing_like_that/?openid_xrds'
+   * 
+   * @return void
+   */
+  protected function set_header($header)
+  {
+    $this->EE->output->set_header($header);
+  }
 }
 
 /* End of file pi.http_header.php */
